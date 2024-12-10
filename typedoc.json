@@ -1,0 +1,9 @@
+{
+  "entryPoints": ["src/client/index.ts"],
+  "out": "docs",
+  "name": "Kusion API Client SDK",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "theme": "default",
+  "readme": "README.md"
+}

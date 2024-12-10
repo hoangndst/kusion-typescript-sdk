@@ -1,0 +1,29 @@
+# Source
+src/
+examples/
+openapi-ts.config.ts
+
+# Config files
+.eslintrc
+.eslintignore
+tsconfig.json
+tsconfig.build.json
+typedoc.json
+
+# Development files
+.github/
+docs/
+api/
+CLA.md
+
+# Git files
+.git/
+.gitignore
+
+# Dependencies
+node_modules/
+yarn.lock
+package-lock.json
+
+# Only include dist folder for npm package
+!dist/
