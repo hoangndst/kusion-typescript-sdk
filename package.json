@@ -1,5 +1,5 @@
 {
-  "name": "@kusionstack/kusion-api-client-sdk",
+  "name": "@hoangndst/kusion-api-client-sdk",
   "version": "1.0.0",
   "description": "Kusion API Client SDK",
   "main": "dist/index.js",
@@ -17,7 +17,8 @@
     "openapi-ts": "openapi-ts",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "docs": "typedoc --out docs src/client/index.ts"
+    "docs": "typedoc --out docs src/client/index.ts",
+    "release": "yarn clean && yarn build && npm version patch && npm publish"
   },
   "dependencies": {
     "@hey-api/client-fetch": "^0.5.2"
