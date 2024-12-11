@@ -1,0 +1,44 @@
+name: PR Workflow
+
+on:
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+    - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18.x, 20.x]
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --version
+
+      - name: Install dependencies
+        run: yarn install
+      
+      - name: lint code
+        run: yarn lint
+      
+      - name: type checking and declarations
+        run: yarn tsc
+      
+      - name: check openapi-ts
+        run: yarn openapi-ts
+
+      # make sure sdk and openapi are in sync
+      - name: Check for uncommitted changes of openapi-ts
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "Uncommitted changes found after running openapi-ts. CI failed."
+            exit 1
+          else
+            echo "No changes found. CI passed."
+          fi
