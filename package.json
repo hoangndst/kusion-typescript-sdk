@@ -1,0 +1,48 @@
+{
+  "name": "@kusionstack/kusion-api-client-sdk",
+  "version": "1.0.0",
+  "description": "Kusion API Client SDK",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "tsc": "tsc",
+    "clean": "rm -rf dist",
+    "prepare": "yarn clean && yarn build",
+    "openapi-ts": "openapi-ts",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "docs": "typedoc --out docs src/client/index.ts"
+  },
+  "dependencies": {
+    "@hey-api/client-fetch": "^0.5.2"
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "^0.59.1",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^8.56.0",
+    "typedoc": "^0.27.4",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KusionStack/kusion-typescript-sdk.git"
+  },
+  "keywords": [
+    "Kusion",
+    "Kusion Server",
+    "KusionStack"
+  ],
+  "license": "Apache-2.0",
+  "author": "Yang Yang",
+  "homepage": "https://github.com/KusionStack/kusion-typescript-sdk#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
